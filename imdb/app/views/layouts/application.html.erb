@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav>
+		<%= link_to "Home", :root %>
+		<%= link_to "Movies", :movies%>
+		<%= link_to "Actors", :actors%>
+		<h2>IMDb Clone</h2>
+	</nav>
 
 <%= yield %>
 
 </body>
 </html>
+

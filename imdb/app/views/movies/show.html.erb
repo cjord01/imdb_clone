@@ -1,0 +1,10 @@
+<h2>
+	<%= @movie.title %>
+	<%=" (#{@movie.year})"%>
+</h2>
+
+<% @roles.each do |role| %>
+	<%= "#{role.name} - " %>
+	<%= link_to "#{role.actor.name}", actor_path(role.actor) %>
+	<br>
+<% end %>

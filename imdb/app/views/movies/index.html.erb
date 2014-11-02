@@ -1,0 +1,8 @@
+<h2>Movies:</h2>
+
+<% @movies.each do |movie| %>
+	<h3>
+		<%= link_to "#{movie.title}", movie_path(movie)%>
+		<%=" (#{movie.year})"%>
+	</h3>
+<% end %>
