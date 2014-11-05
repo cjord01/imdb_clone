@@ -12,15 +12,28 @@
   </head>
 
   <body>
-
-  	<nav>
-			<%= link_to "Home", :root %>
-			<%= link_to "Movies", :movies%>
-			<%= link_to "Actors", :actors%>
-		<h2>IMDb Clone</h2>
-		</nav>
+  	
+  	<div class="contain-to-grid fixed">
+	  	<nav class="top-bar" data-topbar role="navigation">
+	  		<ul class="title-area">
+	  			<li class="name">
+						<h3><%= link_to "IMDb Clone", :root%></h3>
+					</li>
+				</ul>
+				<section class="top-bar-section">
+					<div class="right">
+						<ul class="button-group">
+							<li><%= link_to "Movies", :movies, :class =>"button"%></li>
+							<li><%= link_to "Actors", :actors, :class =>"button"%></li>
+						</ul>
+					</div>
+				</section>
+			</nav>
+		</div>
 
     <%= yield %>
+
     <%= javascript_include_tag "application" %>
+
   </body>
 </html>

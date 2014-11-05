@@ -1,12 +1,16 @@
-<h2>
-	<%= @movie.title %>
-	<%=" (#{@movie.year})"%>
-</h2>
+<div class="row">
+	<div class="small-9 columns">
+		<h2>
+			<%= @movie.title %>
+			<%=" (#{@movie.year})"%>
+		</h2>
 
-<h3>
-	<% @roles.each do |role| %>
-		<%= "#{role.name} - " %>
-		<%= link_to "#{role.actor.name}", actor_path(role.actor) %>
-		<br>
-	<% end %>
-</h3>
+		<h3>
+			<% @roles.each do |role| %>
+				<%= link_to "#{role.actor.name}", actor_path(role.actor) %>
+				<%= "- #{role.name}" %>
+				<br>
+			<% end %>
+		</h3>
+	</div>
+</div>
