@@ -4,6 +4,8 @@
 			<%= @actor.name %>
 		</h2>
 
+		<%= link_to "Add a Role", :new_role, :class=>"button"%>
+
 		<h3>
 			<% @roles.each do |role| %>
 				<%= link_to "#{role.movie.title}", movie_path(role.movie) %>

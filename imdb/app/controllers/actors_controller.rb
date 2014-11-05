@@ -9,4 +9,18 @@ class ActorsController < ApplicationController
 		@roles = @actor.roles
 	end
 
+	def new
+		@actor = Actor.new
+	end
+
+	def create
+		@actor = Actor.create(actor_params)
+		redirect_to actor_path(@actor.id)
+	end
+
+	private
+	def actor_params
+		params.require(:actor).permit(:name)
+	end
+
 end

@@ -1,6 +1,7 @@
 <div class="row">
 	<div class="small-9 columns">
-		<h2>Actors:</h2>
+		<h2>ACTORS</h2>
+		<%= link_to "Add an Actor", :new_actor, :class=>"button"%>
 		<% @actors.each do |actor| %>
 			<h3><%= link_to "#{actor.name}", actor_path(actor)%></h3>
 		<% end %>
