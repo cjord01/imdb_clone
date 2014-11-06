@@ -1,12 +1,11 @@
 class MoviesController < ApplicationController
-
 	def index
 		@movies = Movie.all.sort { |a,b| a.title <=> b.title }
 	end
 
 	def show
 		@movie = Movie.find(params[:id])
-		@roles = @movie.roles
+		@roles = @movie.roles.sort { |a,b| a.actor.name <=> b.actor.name }
 	end
 
 	def new
@@ -22,5 +21,4 @@ class MoviesController < ApplicationController
 	def movie_params
 		params.require(:movie).permit(:title, :year)
 	end
-
 end

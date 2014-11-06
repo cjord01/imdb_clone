@@ -6,7 +6,7 @@ class ActorsController < ApplicationController
 
 	def show
 		@actor = Actor.find(params[:id])
-		@roles = @actor.roles
+		@roles = @actor.roles.sort { |a,b| a.movie.title <=> b.movie.title }
 	end
 
 	def new
