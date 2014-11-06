@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
 	def show
 		@movie = Movie.find(params[:id])
 		@roles = @movie.roles.sort { |a,b| a.actor.name <=> b.actor.name }
+		@suckr = ImageSuckr::GoogleSuckr.new
 	end
 
 	def new
